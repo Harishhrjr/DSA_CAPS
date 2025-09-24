@@ -12,7 +12,6 @@ int urgentCount = 0;
 char normalQueue[MAX][100];
 int front = -1, rear = -1;
 
-/* Push urgent complaint into stack */
 void pushUrgent(char complaint[]) {
     if (top >= MAX - 1) {
         printf("[ERROR] Urgent complaint section is full!\n");
@@ -24,7 +23,7 @@ void pushUrgent(char complaint[]) {
     printf("[MSG] Message to Customer: Your work will be finished within an hour or five.\n");
 }
 
-/* Enqueue normal complaint into queue */
+
 void enqueueNormal(char complaint[]) {
     if (rear >= MAX - 1) {
         printf("[ERROR] Normal complaint section is full!\n");
@@ -35,8 +34,6 @@ void enqueueNormal(char complaint[]) {
     printf("[OK] Normal complaint added!\n");
     printf("[MSG] Message to Customer: Your work will be finished within a day or two.\n");
 }
-
-/* Resolve complaint (urgent first, then normal) */
 void resolveComplaint() {
     if (top != -1) {
         printf("[RESOLVED] Urgent Complaint: %s\n", urgentStack[top--]);
@@ -49,8 +46,6 @@ void resolveComplaint() {
         printf("[INFO] No complaints to resolve!\n");
     }
 }
-
-/* Display pending complaints */
 void displayComplaints() {
     int i;
     printf("\n--- Pending Urgent Complaints ---\n");
@@ -71,7 +66,6 @@ void displayComplaints() {
     printf("\n");
 }
 
-/* Main menu */
 int main() {
     printf("Harish.r CH.SC.U4cse24163\n");
 
